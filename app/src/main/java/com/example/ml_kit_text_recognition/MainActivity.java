@@ -25,6 +25,12 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    // SOLUCION A ERRORES
+    // https://stackoverflow.com/questions/42382457/java-lang-noclassdeffounderror-failed-resolution-of-landroid-support-v4-util-a
+    // añadiendo en gradle.properties
+    //android.useAndroidX=true
+    //android.enableJetifier=true
+
     private Button Captureimgbtn, detecttxtbtn;
     private ImageView imageView;
     private TextView txtviewdisplay;
@@ -61,10 +67,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // METODO PARA DETECTAR EL TEXTO EN LA IMAGEN
+
     private void detectTextFromImage() {
         FirebaseVisionImage firebaseVisionImage = FirebaseVisionImage.fromBitmap(imageBitmap);
-       FirebaseVisionTextDetector textDetector =
-                FirebaseVision.getInstance().getVisionTextDetector();
+       FirebaseVisionTextDetector textDetector = FirebaseVision.getInstance().getVisionTextDetector();
         textDetector.detectInImage(firebaseVisionImage).addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
             @Override
             public void onSuccess(FirebaseVisionText firebaseVisionText) {
@@ -81,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
     private void displayTextFromImage(FirebaseVisionText firebaseVisionText) {
         List<FirebaseVisionText.Block> blockList = firebaseVisionText.getBlocks();
         if(blockList.size() == 0){
-            Toast.makeText(this, "No text Found in Image",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No hay texto en la imagen",Toast.LENGTH_SHORT).show();
         }else{
             for(FirebaseVisionText.Block block : firebaseVisionText.getBlocks()){
                 String text = block.getText();

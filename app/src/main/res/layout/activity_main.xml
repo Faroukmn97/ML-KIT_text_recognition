@@ -14,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:background="#EFF3F3"
+        tools:ignore="ContentDescription,MissingPrefix"
         android:layout_marginBottom="40dp"/>
 
     <TextView
@@ -29,22 +30,26 @@
         android:id="@+id/capture_img"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="#225C6E"
-        android:textAllCaps="false"
         android:layout_above="@+id/detect_text_img_btn"
-        android:textSize="17dp"
-        android:text="capture_img"
-        android:textColor="@android:color/white" />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/custom_image"
+        android:text="Capturar imagen"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="17dp" />
 
     <Button
         android:id="@+id/detect_text_img_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:layout_alignParentBottom="true"
-        android:background="#86C683"
+        android:background="@drawable/custom_image"
         android:textSize="17dp"
-        android:text="Detect text"
+        android:text="Detectar texto"
         android:textAllCaps="false"
         android:textColor="@android:color/white" />
 
