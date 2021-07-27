@@ -36,9 +36,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     // implements
     implementation 'com.google.firebase:firebase-database:19.3.0'
-    implementation 'com.google.firebase:firebase-analytics:17.4.2'
-    implementation 'com.google.firebase:firebase-ml-vision:24.0.3'
-    implementation 'com.google.firebase:firebase-ml-vision-automl:18.0.5'
+    implementation 'com.google.firebase:firebase-ml-vision:15.0.0'
+    implementation 'com.google.firebase:firebase-core:15.0.2'
     //noinspection GradleDynamicVersion
 
     implementation 'com.github.bumptech.glide:glide:4.11.0'
